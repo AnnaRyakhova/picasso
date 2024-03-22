@@ -18,7 +18,7 @@ export const MainPage = () => {
     <div className={styles.root}>
       <h1 className={styles.title}>Posts</h1>
       {posts.map(({ id, title, body }) => (
-        <PostCard id={id} title={title} body={body} />
+        <PostCard id={id} title={title} body={body} url={`post/:${id}`} key={id} />
       ))}
     </div>
   )
