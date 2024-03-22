@@ -1,8 +1,9 @@
 import { Icon } from '../../../shared/icon'
 import { Post } from '../types'
 import styles from './index.module.css'
+import { Link } from 'react-router-dom'
 
-export const PostCard = ({ id, title, body }: Post) => {
+export const PostCard = ({ id, title, body, url }: Post) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.post}>
@@ -14,9 +15,9 @@ export const PostCard = ({ id, title, body }: Post) => {
         <p className={styles.text}>{body}</p>
       </div>
 
-      <button className={styles.button}>
+      <Link className={styles.Link} to={url}>
         <Icon type="view" className={styles.icon} />
-      </button>
+      </Link>
     </div>
   )
 }
