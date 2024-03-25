@@ -4,6 +4,7 @@
   border: solid 1px rgb(0, 0, 0, 0.1);
   border-radius: 8px;
   max-width: 686px;
+  width: 100%;
   justify-content: center;
   padding: 8px 8px 8px 24px;
 }
@@ -50,4 +51,14 @@ h2 {
   text-overflow: ellipsis;
   color: rgb(0, 0, 0, 0.5);
   max-width: 532px;
+}
+
+@media (max-width: 576px) {
+  .title h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
