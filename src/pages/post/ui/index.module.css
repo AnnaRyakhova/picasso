@@ -1,0 +1,22 @@
+.root {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+}
+
+.title {
+  font-size: 36px;
+  padding-bottom: 24px;
+}
+
+.button {
+  width: max-content;
+  margin-top: 24px;
+  padding: 10px 16px;
+  border: solid 1px #000;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,16 +1,24 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import styles from './index.module.css'
+import { useGetPostByIdQuery } from '../../../app/api'
 
 export const PostPage = () => {
   const params = useParams()
-  const id = params.id?.slice(1)
-  console.log(id)
-  const post = { title: 'title', text: 'text' }
+  const id = Number(params.id)
+  const { data: post, isSuccess } = useGetPostByIdQuery(id)
 
-  return (
-    <div className={styles.root}>
-      <h2 className={styles.title}>{post.title}</h2>
-      <p>{post.text}</p>
-    </div>
-  )
+  const navigate = useNavigate()
+  const handleReturn = () => navigate(-1)
+
+  if (isSuccess) {
+    return (
+      <div className={styles.root}>
+        <h2 className={styles.title}>{post.title}</h2>
+        <p>{post.body}</p>
+        <button className={styles.button} onClick={handleReturn}>
+          Назад
+        </button>
+      </div>
+    )
+  }
 }
