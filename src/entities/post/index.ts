@@ -1,2 +1,2 @@
-export { PostCard } from './ui'
+export * from './ui'
 export * from './types'

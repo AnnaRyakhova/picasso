@@ -13,8 +13,8 @@ export const postsApi = createApi({
           _page: page,
         },
       }),
-      transformResponse(response: Post[], meta) {
-        return { response, totalCount: Number(meta?.response?.headers.get('X-Total-Count')) }
+      transformResponse(posts: Post[], meta) {
+        return { posts, totalCount: Number(meta?.response?.headers.get('X-Total-Count')) }
       },
     }),
     getPostById: build.query({

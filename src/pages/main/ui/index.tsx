@@ -9,6 +9,7 @@ export const MainPage = () => {
   const [posts, setPosts] = useState(Array<Post>)
   const [fetching, setFetching] = useState(true)
   const [totalCount, setTotalCount] = useState(0)
+
   const { data, refetch } = useGetPostsQuery({ limit: 10, page: currentPage })
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export const MainPage = () => {
       refetch().then(() => {
         if (data) {
           setFetching(false)
-          setPosts((prevPosts) => [...prevPosts, ...data.response])
+          setPosts((prevPosts) => [...prevPosts, ...data.posts])
           setTotalCount(data.totalCount)
         }
       })
@@ -37,6 +38,7 @@ export const MainPage = () => {
 
   const handleScroll = (e: Event) => {
     const document = e.target as Document
+
     const isEnoughScroll =
       document.documentElement.scrollHeight - (document.documentElement.scrollTop + window.innerHeight) < 100
 
