@@ -16,7 +16,7 @@ export const PostCard = ({ id, title, body, url }: Post) => {
       </div>
 
       <Link className={styles.button} to={url}>
-        <Icon type="view" className={styles.icon} />
+        <Icon type="view" />
       </Link>
     </div>
   )
